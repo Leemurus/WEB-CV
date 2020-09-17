@@ -1,8 +1,5 @@
 $(document).ready(function () {
-    $('.about_section').hide();
-    // $('.experience_section').hide();
-    $('.projects_section').hide();
-    $('.achievements_section').hide();
+    $('.about_section').show();
 });
 
 $('.fixed_head .fixed_center_container .about').click(function () {
