@@ -1,3 +1,14 @@
+@import url('https://fonts.googleapis.com/css2?family=Secular+One&display=swap');
+
+
+html {
+    background-image: url("../images/background.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: 'Secular One', sans-serif;
+    overflow: auto;
+}
+
 html, body {
     width: 100%;
     height: 100%;
@@ -29,23 +40,19 @@ em {
 header {
     width: 100%;
     height: 50%;
-    background-image: url("../images/background_header.jpg");
-    background-repeat: no-repeat;
-    background-size: cover;
 }
 
 header .fixed_head {
-    font-family: "Montserrat", "Arial", sans-serif;
     text-align: center;
     position: fixed;
     top: 0;
     width: 100%;
-    height: 1.2em;
+    height: 1.7em;
     z-index: 100;
     font-size: 1.5em;
     color: white;
-    padding-top: 3px;
-    background-color: #1e4a69;
+    padding-top: 0.7em;
+    background-color: black;
     opacity: 0.6;
 }
 
@@ -56,14 +63,14 @@ header .fixed_head .fixed_center_container {
 }
 
 header .fixed_head .fixed_center_container .logo {
-    width: 40%;
+    width: 35%;
     margin-left: 0;
     text-align: center;
     display: table-cell;
 }
 
 header .fixed_head .fixed_center_container .menu {
-    width: 60%;
+    width: 65%;
     list-style: none;
     display: table-cell;
 }
@@ -78,56 +85,75 @@ header .fixed_head .fixed_center_container li:hover {
     color: black;
     cursor: pointer;
     opacity: 0.9;
-    border-radius: 5px;
     background-color: #ccd7e3;
+    box-shadow: 6px 6px #976a67,
+    5px 5px #976a67;
+    -webkit-transform: translateX(-7px);
+    transform: translateX(-7px);
 }
 
-header .my_photo {
-    text-align: center;
+header .my_information {
+    padding: 0;
+    margin: 0;
     display: flex;
+    flex-direction: column;
     align-items: center;
     justify-content: center;
+    text-align: center;
     width: 100%;
     height: 100%;
-    color: white;
 }
 
-header .my_photo img {
+header .my_information .my_photo img {
+    text-align: center;
     border-radius: 50%;
-    width: 10em;
+    width: 200px;
+    opacity: 0.88;
 }
+
+header .my_information .text_information .name_surname {
+    color: #e0d3d3;
+    font-size: 1.6em;
+}
+
+header .my_information .text_information .job {
+    color: #fdbaba;
+    font-size: 1.3em;
+}
+
+/* ================================== MAIN ==================================== */
 
 main {
-    font-family: "DejaVu Sans";
     width: 100%;
     height: 45%;
     text-align: center;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-
 }
 
 main .main_information {
-    margin-top: -3%;
-    width: 50%;
-    height: 60%;
-    border: 1px solid black;
-    border-radius: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
 }
 
-main .main_information  h1 {
-    margin-bottom: 10px;
+main .main_information h1 {
+    margin-top: 20px;
 }
 
 main .main_information section {
-    height: 100%;
+    width: 50%;
+    height: 60%;
+    border: 2px solid lightgray;
+    border-radius: 20px;
+    margin: 10px;
+    color: #e5e5e5;
+    background-color: rgba(54, 25, 25, .1);
 }
 
 main .main_information .information {
     width: 100%;
     height: 80%;
     display: table;
+    text-align: center;
 }
 
 main .main_information .information article {
@@ -136,89 +162,113 @@ main .main_information .information article {
     vertical-align: middle;
 }
 
-main .main_information .information aside {
-    display: table-cell;
-    width: 50%;
+/* ================================== ABOUT ==================================== */
+
+
+main .main_information .about_section {
+    width: 30em;
+    height: 10em;
+    font-size: 1.25em;
+    box-shadow: 7px 7px #976a67,
+    5px 5px #976a67;
 }
 
-main .main_information section {
-    display: none;
-}
+/* ================================== EXPERIENCE ==================================== */
 
-main .main_information .about_section .information aside {
-    display: table-cell;
-    width: 50%;
+
+main .main_information .experience_section {
+    width: 40em;
+    height: 20em;
+    box-shadow: 7px 7px #2a4a55,
+    5px 5px #2a4a55;
 }
 
 main .main_information .experience_section .information dl {
     margin-top: 20px;
     text-align: left;
     margin-left: 10px;
+    font-size: 1.25em;
 }
 
 main .main_information .experience_section .information dl dt {
-    margin-top: 10px;
+    margin-top: 20px;
 }
 
 main .main_information .experience_section .information dl dd {
     margin-left: 15px;
 }
 
-main .main_information .experience_section .information aside {
-    vertical-align: bottom;
-}
 
-main .main_information .experience_section .information aside .owner {
-    text-align: right;
+/* ================================== PROJECTS ==================================== */
+
+
+main .main_information .projects_section {
+    width: 49em;
+    height: 20em;
+    font-size: 1.2em;
 }
 
 main .main_information .projects_section .information dl {
     margin-top: 20px;
     text-align: left;
-    margin-left: 20%;
+    margin-left: 2%;
 }
 
 main .main_information .projects_section .information dl dt {
-    margin-top: 10px;
+    margin-top: 25px;
 }
 
 main .main_information .projects_section .information dl dt a {
-    text-decoration: underline green;
-    color: black;
+    color: #cda791;
     font-weight: bold;
 }
 
 main .main_information .projects_section .information dl dt a:hover {
-    color: darkseagreen;
+    color: #ffbdbd;
 }
 
 main .main_information .projects_section .information dl dd {
     margin-left: 15px;
 }
 
-main .main_information .achievements_section .information {
-    list-style-type:decimal;
-    font-size: 0.9em;
+/* ================================== ACHIEVEMENTS ==================================== */
+
+
+main .main_information .achievements_section {
+    width: 30em;
+    height: 20em;
 }
+
+main .main_information .achievements_section .information {
+    list-style-type: decimal;
+    font-size: 1.1em;
+}
+
+
+/* ================================== FOOTER ==================================== */
+
 
 footer {
     width: 100%;
-    height: 5%;
-    background-color: #1e4a69;
+    height: 3%;
+    background-color: black;
     z-index: 100;
     position: fixed;
     bottom: 0;
+    opacity: 0.6;
+    text-align: center;
+    padding: 0;
 }
 
 footer .rights {
-    text-align: center;
-    display: flex;
-    align-items: center;
-    width: 100%;
     height: 100%;
     color: white;
+    margin: 0 auto;
+    display: table;
 }
 
 footer .rights span {
-    margin-left: 20px;
+    display: table-cell;
+    vertical-align: middle;
+    font-size: 1em;
 }
