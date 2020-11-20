@@ -36,50 +36,21 @@ function getMedianValue(array) {
     return (sortedArray[leftMiddleIndex] + sortedArray[rightMiddleIndex]) / 2;
 }
 
-function mergeArray(left, right) {
-    let new_array = [];
-    let i = 0, j = 0;
-
-    while (i < left.length && j < right.length) {
-        if (left[i] < right[j]) {
-            new_array.push(left[i]);
-            i++;
-        } else {
-            new_array.push(right[j]);
-            j++;
-        }
-    }
-
-    new_array = new_array.concat(left.slice(i, left.length));
-    new_array = new_array.concat(right.slice(j, right.length));
-
-    return new_array;
-}
-
 function quickSort(array) {
     if (array.length < 2) {
         return array;
     }
 
-    const pivot = array[Math.floor(Math.random() * array.length)]
-    const left = [];
-    const right = [];
-    let isNotUnique = false;
-
-    for (let i = 0; i < array.length; i++) {
-        if (pivot > array[i]) {
-            left.push(array[i]);
-        } else {
-            right.push(array[i]);
-        }
-        isNotUnique |= (array[0] != array[i]);
-    }
-
-    if (!isNotUnique) {
+    const isUnique = array.every(v => v === array[0]);
+    if (isUnique) {
         return array;
     }
 
-    return mergeArray(quickSort(left), quickSort(right));
+    const pivot = array[Math.floor(Math.random() * array.length)]
+    const less = array.filter(value => value < pivot);
+    const greater = array.filter(value => value >= pivot);
+
+    return [...quickSort(less), pivot, ...quickSort(greater)];
 }
 
 function getTagsMap() {
@@ -96,7 +67,7 @@ function getTagsMap() {
     return tagMap;
 }
 
-const array = getRandomArray(10);
+const array = getRandomArray(1000);
 console.log("Begin array: " + array.toString())
 console.log("Min value of array: " + getMinValue(array).toString())
 console.log("Max value of array: " + getMaxValue(array))
