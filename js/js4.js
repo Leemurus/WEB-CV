@@ -50,7 +50,7 @@ function quickSort(array) {
     const less = array.filter(value => value < pivot);
     const greater = array.filter(value => value >= pivot);
 
-    return [...quickSort(less), pivot, ...quickSort(greater)];
+    return [...quickSort(less), ...quickSort(greater)];
 }
 
 function getTagsMap() {
